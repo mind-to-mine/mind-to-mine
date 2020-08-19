@@ -1,168 +1,159 @@
 <?php
 
-// @codingStandardsIgnoreFile
-
 /**
  * @file
- * Drupal site-specific configuration file.
+ * Lagoon Drupal 8 configuration file.
  *
- * IMPORTANT NOTE:
- * This file may have been set to read-only by the Drupal installation program.
- * If you make changes to this file, be sure to protect it again after making
- * your modifications. Failure to remove write permissions to this file is a
- * security risk.
- *
- * In order to use the selection rules below the multisite aliasing file named
- * sites/sites.php must be present. Its optional settings will be loaded, and
- * the aliases in the array $sites will override the default directory rules
- * below. See sites/example.sites.php for more information about aliases.
- *
- * The configuration directory will be discovered by stripping the website's
- * hostname from left to right and pathname from right to left. The first
- * configuration file found will be used and any others will be ignored. If no
- * other configuration file is found then the default configuration file at
- * 'sites/default' will be used.
- *
- * For example, for a fictitious site installed at
- * https://www.drupal.org:8080/mysite/test/, the 'settings.php' file is searched
- * for in the following directories:
- *
- * - sites/8080.www.drupal.org.mysite.test
- * - sites/www.drupal.org.mysite.test
- * - sites/drupal.org.mysite.test
- * - sites/org.mysite.test
- *
- * - sites/8080.www.drupal.org.mysite
- * - sites/www.drupal.org.mysite
- * - sites/drupal.org.mysite
- * - sites/org.mysite
- *
- * - sites/8080.www.drupal.org
- * - sites/www.drupal.org
- * - sites/drupal.org
- * - sites/org
- *
- * - sites/default
- *
- * Note that if you are installing on a non-standard port number, prefix the
- * hostname with that number. For example,
- * https://www.drupal.org:8080/mysite/test/ could be loaded from
- * sites/8080.www.drupal.org.mysite.test/.
- *
- * @see example.sites.php
- * @see \Drupal\Core\DrupalKernel::getSitePath()
- *
- * In addition to customizing application settings through variables in
- * settings.php, you can create a services.yml file in the same directory to
- * register custom, site-specific service definitions and/or swap out default
- * implementations with custom ones.
+ * You should not edit this file, please use environment specific files!
+ * They are loaded in this order:
+ * - all.settings.php
+ *   For settings that should be applied to all environments (dev, prod, staging, docker, etc).
+ * - all.services.yml
+ *   For services that should be applied to all environments (dev, prod, staging, docker, etc).
+ * - production.settings.php
+ *   For settings only for the production environment.
+ * - production.services.yml
+ *   For services only for the production environment.
+ * - development.settings.php
+ *   For settings only for the development environment (development sites, docker).
+ * - development.services.yml
+ *   For services only for the development environment (development sites, docker).
+ * - settings.local.php
+ *   For settings only for the local environment, this file will not be committed in GIT!
+ * - services.local.yml
+ *   For services only for the local environment, this file will not be committed in GIT!
  */
 
-/**
- * Database settings:
- *
- * The $databases array specifies the database connection or
- * connections that Drupal may use.  Drupal is able to connect
- * to multiple databases, including multiple types of databases,
- * during the same request.
- *
- * One example of the simplest connection array is shown below. To use the
- * sample settings, copy and uncomment the code below between the @code and
- * @endcode lines and paste it after the $databases declaration. You will need
- * to replace the database username and password and possibly the host and port
- * with the appropriate credentials for your database system.
- *
- * The next section describes how to customize the $databases array for more
- * specific needs.
- *
- * @code
- * $databases['default']['default'] = array (
- *   'database' => 'databasename',
- *   'username' => 'sqlusername',
- *   'password' => 'sqlpassword',
- *   'host' => 'localhost',
- *   'port' => '3306',
- *   'driver' => 'mysql',
- *   'prefix' => '',
- *   'collation' => 'utf8mb4_general_ci',
- * );
- * @endcode
- */
-$databases = [];
+// Lagoon Database connection.
+if (getenv('LAGOON')) {
+  $databases['default']['default'] = array(
+    'driver' => 'mysql',
+    'database' => getenv('MARIADB_DATABASE') ?: 'drupal',
+    'username' => getenv('MARIADB_USERNAME') ?: 'drupal',
+    'password' => getenv('MARIADB_PASSWORD') ?: 'drupal',
+    'host' => getenv('MARIADB_HOST') ?: 'mariadb',
+    'port' => 3306,
+    'prefix' => '',
+  );
+}
 
-/**
- * Access control for update.php script.
- *
- * If you are updating your Drupal installation using the update.php script but
- * are not logged in using either an account with the "Administer software
- * updates" permission or the site maintenance account (the account that was
- * created during installation), you will need to modify the access check
- * statement below. Change the FALSE to a TRUE to disable the access check.
- * After finishing the upgrade, be sure to open this file again and change the
- * TRUE back to a FALSE!
- */
-$settings['update_free_access'] = FALSE;
+// Lagoon Solr connection
+// WARNING: you have to create a search_api server having "solr" machine name at
+// /admin/config/search/search-api/add-server to make this work.
+if (getenv('LAGOON') && (file_exists($app_root . '/modules/contrib/search_api_solr') || file_exists($app_root . 'modules/search_api_solr'))) {
+  $config['search_api.server.solr']['backend_config']['connector_config']['host'] = (getenv('SOLR_HOST') ?: 'solr');
+  $config['search_api.server.solr']['backend_config']['connector_config']['path'] = '/solr/';
+  $config['search_api.server.solr']['backend_config']['connector_config']['core'] = (getenv('SOLR_CORE') ?: 'drupal');
+  $config['search_api.server.solr']['backend_config']['connector_config']['port'] = 8983;
+  $config['search_api.server.solr']['backend_config']['connector_config']['http_user'] = (getenv('SOLR_USER') ?: '');
+  $config['search_api.server.solr']['backend_config']['connector_config']['http']['http_user'] = (getenv('SOLR_USER') ?: '');
+  $config['search_api.server.solr']['backend_config']['connector_config']['http_pass'] = (getenv('SOLR_PASSWORD') ?: '');
+  $config['search_api.server.solr']['backend_config']['connector_config']['http']['http_pass'] = (getenv('SOLR_PASSWORD') ?: '');
+  $config['search_api.server.solr']['name'] = 'Lagoon Solr - Environment: ' . getenv('LAGOON_PROJECT');
+}
 
-/**
- * Private file path:
- *
- * A local file system path where private files will be stored. This directory
- * must be absolute, outside of the Drupal installation directory and not
- * accessible over the web.
- *
- * Note: Caches need to be cleared when this value is changed to make the
- * private:// stream wrapper available to the system.
- *
- * See https://www.drupal.org/documentation/modules/file for more information
- * about securing private files.
- */
-$settings['file_private_path'] = 'sites/default/files/private';
+// Lagoon Redis connection if Drupal Redis module exists and PHP Redis Module is loaded.
+if (getenv('LAGOON') && (file_exists($app_root . '/modules/contrib/redis') || file_exists($app_root . 'modules/redis')) && extension_loaded('redis')) {
+  $settings['redis.connection']['interface'] = 'PhpRedis';
+  $settings['redis.connection']['host'] = getenv('REDIS_HOST') ?: 'redis';
+  $settings['redis.connection']['port'] = getenv('REDIS_SERVICE_PORT') ?: '6379';
 
-/**
- * Load services definition file.
- */
-$settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
+  $settings['cache_prefix']['default'] = getenv('LAGOON_PROJECT') . '_' . getenv('LAGOON_GIT_SAFE_BRANCH');
 
-/**
- * The default list of directories that will be ignored by Drupal's file API.
- *
- * By default ignore node_modules and bower_components folders to avoid issues
- * with common frontend tools and recursive scanning of directories looking for
- * extensions.
- *
- * @see file_scan_directory()
- * @see \Drupal\Core\Extension\ExtensionDiscovery::scanDirectory()
- */
-$settings['file_scan_ignore_directories'] = [
-  'node_modules',
-  'bower_components',
-];
+  // Do not set the cache during installations of Drupal.
+  if (!drupal_installation_attempted()) {
+    $settings['cache']['default'] = 'cache.backend.redis';
 
-/**
- * The default number of entities to update in a batch process.
- *
- * This is used by update and post-update functions that need to go through and
- * change all the entities on a site, so it is useful to increase this number
- * if your hosting configuration (i.e. RAM allocation, CPU speed) allows for a
- * larger number of entities to be processed in a single batch run.
- */
-$settings['entity_update_batch_size'] = 50;
+    // Include the default example.services.yml from the module, which will
+    // replace all supported backend services (that currently includes the cache tags
+    // checksum service and the lock backends, check the file for the current list)
+    $settings['container_yamls'][] = 'modules/contrib/redis/example.services.yml';
 
-/**
- * Ensure configuration is loaded from root config directory.
- */
-$settings['config_sync_directory'] = '../config/sync';
+    // Allow the services to work before the Redis module itself is enabled.
+    $settings['container_yamls'][] = 'modules/contrib/redis/redis.services.yml';
 
-if ($env = getenv('SB_ENVIRONMENT')) {
-  $env_settings = $app_root . '/' . $site_path . '/settings.' . $env . '.php';
-  if (file_exists($env_settings)) {
-    include $env_settings;
+    // Manually add the classloader path, this is required for the container cache bin definition below
+    // and allows to use it without the redis module being enabled.
+    $class_loader->addPsr4('Drupal\\redis\\', 'modules/contrib/redis/src');
+
+    // Use redis for container cache.
+    // The container cache is used to load the container definition itself, and
+    // thus any configuration stored in the container itself is not available
+    // yet. These lines force the container cache to use Redis rather than the
+    // default SQL cache.
+    $settings['bootstrap_container_definition'] = [
+      'parameters' => [],
+      'services' => [
+        'redis.factory' => [
+          'class' => 'Drupal\redis\ClientFactory',
+        ],
+        'cache.backend.redis' => [
+          'class' => 'Drupal\redis\Cache\CacheBackendFactory',
+          'arguments' => ['@redis.factory', '@cache_tags_provider.container', '@serialization.phpserialize'],
+        ],
+        'cache.container' => [
+          'class' => '\Drupal\redis\Cache\PhpRedis',
+          'factory' => ['@cache.backend.redis', 'get'],
+          'arguments' => ['container'],
+        ],
+        'cache_tags_provider.container' => [
+          'class' => 'Drupal\redis\Cache\RedisCacheTagsChecksum',
+          'arguments' => ['@redis.factory'],
+        ],
+        'serialization.phpserialize' => [
+          'class' => 'Drupal\Component\Serialization\PhpSerialize',
+        ],
+      ],
+    ];
   }
 }
 
-/**
- * Local settings. These come last so that they can override anything.
- */
-if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-  include $app_root . '/' . $site_path . '/settings.local.php';
+// Trusted Host Patterns, see https://www.drupal.org/node/2410395 for more information.
+// If your site runs on multiple domains, you need to add these domains here.
+if (getenv('LAGOON_ROUTES')) {
+  $settings['trusted_host_patterns'] = array(
+  // Escape dots, remove schema, use commas as regex separator.
+    '^' . str_replace(['.', 'https://', 'http://', ','], ['\.', '', '', '|'], getenv('LAGOON_ROUTES')) . '$',
+  );
+}
+
+// Temp directory.
+if (getenv('TMP')) {
+  $config['system.file']['path']['temporary'] = getenv('TMP');
+}
+
+// Hash Salt.
+if (getenv('LAGOON')) {
+  $settings['hash_salt'] = hash('sha256', getenv('LAGOON_PROJECT'));
+}
+
+// Settings for all environments.
+if (file_exists(__DIR__ . '/all.settings.php')) {
+  include __DIR__ . '/all.settings.php';
+}
+
+// Services for all environments.
+if (file_exists(__DIR__ . '/all.services.yml')) {
+  $settings['container_yamls'][] = __DIR__ . '/all.services.yml';
+}
+
+if (getenv('LAGOON_ENVIRONMENT_TYPE')) {
+  // Environment specific settings files.
+  if (file_exists(__DIR__ . '/' . getenv('LAGOON_ENVIRONMENT_TYPE') . '.settings.php')) {
+    include __DIR__ . '/' . getenv('LAGOON_ENVIRONMENT_TYPE') . '.settings.php';
+  }
+
+  // Environment specific services files.
+  if (file_exists(__DIR__ . '/' . getenv('LAGOON_ENVIRONMENT_TYPE') . '.services.yml')) {
+    $settings['container_yamls'][] = __DIR__ . '/' . getenv('LAGOON_ENVIRONMENT_TYPE') . '.services.yml';
+  }
+}
+
+// Last: this servers specific settings files.
+if (file_exists(__DIR__ . '/settings.local.php')) {
+  include __DIR__ . '/settings.local.php';
+}
+// Last: This server specific services file.
+if (file_exists(__DIR__ . '/services.local.yml')) {
+  $settings['container_yamls'][] = __DIR__ . '/services.local.yml';
 }
