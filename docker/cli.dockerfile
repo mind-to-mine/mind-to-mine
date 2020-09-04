@@ -1,4 +1,4 @@
-FROM amazeeio/php:7.2-cli-drupal
+FROM amazeeio/php:7.4-cli-drupal
 
 COPY composer.json composer.lock /app/
 # Uncomment if you have a scripts directory in your Drupal Installation
