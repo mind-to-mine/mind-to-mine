@@ -1,6 +1,6 @@
 docker-compose-yaml: docker-compose.yml
 
-project: mind_to_mine
+project: mind-to-mine
 
 tasks:
   post-rollout:
