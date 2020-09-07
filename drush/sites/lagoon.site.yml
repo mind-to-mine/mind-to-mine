@@ -5,7 +5,7 @@ main:
     command-specific:
       sql-sync:
         no-ordered-dump: true
-  root: ./web
+  root: /app/web
   user: mind-to-mine-main
   ssh:
     options: '-o LogLevel=ERROR -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 32222'
