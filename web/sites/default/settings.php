@@ -26,7 +26,7 @@
 
 // Lagoon Database connection.
 if (getenv('LAGOON')) {
-  $databases['default']['default'] = array(
+  $databases['default']['default'] = [
     'driver' => 'mysql',
     'database' => getenv('MARIADB_DATABASE') ?: 'drupal',
     'username' => getenv('MARIADB_USERNAME') ?: 'drupal',
@@ -34,7 +34,7 @@ if (getenv('LAGOON')) {
     'host' => getenv('MARIADB_HOST') ?: 'mariadb',
     'port' => 3306,
     'prefix' => '',
-  );
+  ];
 }
 
 // Lagoon Solr connection
@@ -111,10 +111,10 @@ if (getenv('LAGOON') && (file_exists($app_root . '/modules/contrib/redis') || fi
 // Trusted Host Patterns, see https://www.drupal.org/node/2410395 for more information.
 // If your site runs on multiple domains, you need to add these domains here.
 if (getenv('LAGOON_ROUTES')) {
-  $settings['trusted_host_patterns'] = array(
+  $settings['trusted_host_patterns'] = [
   // Escape dots, remove schema, use commas as regex separator.
     '^' . str_replace(['.', 'https://', 'http://', ','], ['\.', '', '', '|'], getenv('LAGOON_ROUTES')) . '$',
-  );
+  ];
 }
 
 // Temp directory.
@@ -137,15 +137,20 @@ if (file_exists(__DIR__ . '/all.services.yml')) {
   $settings['container_yamls'][] = __DIR__ . '/all.services.yml';
 }
 
-if (getenv('LAGOON_ENVIRONMENT_TYPE')) {
+if ($env = getenv('LAGOON_ENVIRONMENT_TYPE')) {
   // Environment specific settings files.
-  if (file_exists(__DIR__ . '/' . getenv('LAGOON_ENVIRONMENT_TYPE') . '.settings.php')) {
-    include __DIR__ . '/' . getenv('LAGOON_ENVIRONMENT_TYPE') . '.settings.php';
+  if (file_exists(__DIR__ . '/' . $env . '.settings.php')) {
+    include __DIR__ . '/' . $env . '.settings.php';
   }
 
   // Environment specific services files.
-  if (file_exists(__DIR__ . '/' . getenv('LAGOON_ENVIRONMENT_TYPE') . '.services.yml')) {
-    $settings['container_yamls'][] = __DIR__ . '/' . getenv('LAGOON_ENVIRONMENT_TYPE') . '.services.yml';
+  if (file_exists(__DIR__ . '/' . $env . '.services.yml')) {
+    $settings['container_yamls'][] = __DIR__ . '/' . $env . '.services.yml';
+  }
+} else if (($env = getenv('SB_ENVIRONMENT')) && isset($site_path) && isset($app_root)) {
+  $env_settings = $app_root . '/' . $site_path . '/silverback.' . $env . '.settings.php';
+  if (file_exists($env_settings)) {
+    include $env_settings;
   }
 }
 
@@ -153,6 +158,7 @@ if (getenv('LAGOON_ENVIRONMENT_TYPE')) {
 if (file_exists(__DIR__ . '/settings.local.php')) {
   include __DIR__ . '/settings.local.php';
 }
+
 // Last: This server specific services file.
 if (file_exists(__DIR__ . '/services.local.yml')) {
   $settings['container_yamls'][] = __DIR__ . '/services.local.yml';
