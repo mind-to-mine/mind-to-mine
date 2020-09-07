@@ -35,6 +35,9 @@
         "optimize-autoloader": true
     },
     "autoload": {
+        "classmap": [
+            "scripts/composer/ScriptHandler.php"
+        ],
         "files": [
             "load.environment.php"
         ]
