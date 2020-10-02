@@ -5,6 +5,7 @@ COPY composer.json composer.lock /app/
 # COPY scripts /app/scripts
 # Uncomment if you have a patches directory in your Drupal Installation
 # COPY patches /app/patches
+RUN composer self-update --preview
 RUN composer install --prefer-dist --no-dev --no-suggest --optimize-autoloader --apcu-autoloader
 COPY . /app
 
