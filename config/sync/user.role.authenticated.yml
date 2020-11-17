@@ -12,3 +12,4 @@ permissions:
   - 'access content'
   - 'cancel account'
   - 'change own username'
+  - 'view media'

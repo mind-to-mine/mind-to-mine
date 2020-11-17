@@ -39,3 +39,4 @@ content:
     third_party_settings: {  }
 hidden:
   comment_forum: true
+  langcode: true

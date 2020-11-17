@@ -9,6 +9,7 @@ dependencies:
     - node.type.forum
   module:
     - comment
+    - path
     - text
 _core:
   default_config_hash: rYJIqgUbjjQEXQBNpcOpFGEvx6bA-lgqW7g4wfPOZgQ
@@ -36,6 +37,19 @@ content:
   created:
     type: datetime_timestamp
     weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }

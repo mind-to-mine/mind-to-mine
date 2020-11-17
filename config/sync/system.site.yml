@@ -1,11 +1,11 @@
 uuid: 42896521-a742-4c6c-bf82-9135d5bfbedf
-name: 'Drush Site-Install'
+name: 'Mind to Mine'
 mail: admin@example.com
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /user/login
+  front: /node/2
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en
