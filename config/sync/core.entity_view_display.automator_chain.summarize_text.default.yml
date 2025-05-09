@@ -1,0 +1,33 @@
+uuid: 06b32ecc-9cd9-4621-858b-a9917f547bea
+langcode: en
+status: true
+dependencies:
+  config:
+    - ai_automators.automator_chain_type.summarize_text
+    - field.field.automator_chain.summarize_text.field_input_text
+    - field.field.automator_chain.summarize_text.field_output_field
+  module:
+    - text
+_core:
+  default_config_hash: m22QUDtUIKzxusd3uNHJAcyiO8pk4ZKeEkoSkbwuFz4
+id: automator_chain.summarize_text.default
+targetEntityType: automator_chain
+bundle: summarize_text
+mode: default
+content:
+  field_input_text:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_output_field:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  ai_automator_status: true

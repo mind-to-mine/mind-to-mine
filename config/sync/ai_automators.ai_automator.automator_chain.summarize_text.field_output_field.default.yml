@@ -1,0 +1,35 @@
+uuid: 2a8706d8-e5ee-423c-9641-a1548760305b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.automator_chain.summarize_text.field_output_field
+_core:
+  default_config_hash: 1xBBhBmrSkh_SA2BOmmZMhrBFnnxs7lciCG6UKOupds
+id: automator_chain.summarize_text.field_output_field.default
+label: 'Output Field Default'
+rule: llm_simple_text_long
+input_mode: base
+weight: 100
+worker_type: direct
+entity_type: automator_chain
+bundle: summarize_text
+field_name: field_output_field
+edit_mode: false
+base_field: field_input_text
+prompt: "Summarize this in around two sentences. You may use html in the output with tags like p, em, strong, ul, li, ol, a. Keep links if they exist in the text and are relevant.\r\n\r\nThe text you want to summarize is:\r\n{{ raw_context }}"
+token: ''
+plugin_config:
+  automator_enabled: 1
+  automator_rule: llm_simple_text_long
+  automator_mode: base
+  automator_base_field: field_input_text
+  automator_prompt: "Summarize this in around two sentences. You may use html in the output with tags like p, em, strong, ul, li, ol, a. Keep links if they exist in the text and are relevant.\r\n\r\nThe text you want to summarize is:\r\n{{ raw_context }}"
+  automator_token: ''
+  automator_edit_mode: 0
+  automator_label: 'Output Field Default'
+  automator_weight: '100'
+  automator_worker_type: direct
+  automator_ai_provider: default_json
+  automator_code_block_type: html
+  automator_use_text_format: content_with_ai

@@ -1,0 +1,21 @@
+uuid: 2b16b03d-2289-4c14-8b5c-d54806ef557e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.hero_wide
+    - field.field.media.image.field_media_image
+    - media.type.image
+_core:
+  default_config_hash: ZejmoalQDLSkcymedLEev-L-rqYRZ_0TtEjMVjU0fIk
+id: media.image.hero_wide
+targetEntityType: media
+bundle: image
+mode: hero_wide
+content: {  }
+hidden:
+  created: true
+  field_media_image: true
+  name: true
+  thumbnail: true
+  uid: true

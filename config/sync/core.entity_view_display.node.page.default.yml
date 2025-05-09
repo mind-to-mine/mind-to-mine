@@ -1,29 +1,78 @@
-uuid: 4de1be30-a45c-487a-97a9-37d13760fd85
+uuid: a1966b4d-ac52-43e2-adae-027b65a81905
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_content
+    - field.field.node.page.field_description
+    - field.field.node.page.field_featured_image
+    - field.field.node.page.field_tags
+    - field.field.node.page.layout_builder__layout
     - node.type.page
   module:
+    - layout_builder
+    - layout_discovery
     - text
     - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          e08c8011-3134-4e30-a426-914454dd62d0:
+            uuid: e08c8011-3134-4e30-a426-914454dd62d0
+            region: content
+            configuration:
+              id: 'field_block:node:page:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          ea7f0573-5f6b-45a3-a101-06607c67e801:
+            uuid: ea7f0573-5f6b-45a3-a101-06607c67e801
+            region: content
+            configuration:
+              id: 'extra_field_block:node:page:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }
+_core:
+  default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
 id: node.page.default
 targetEntityType: node
 bundle: page
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 101
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 100
     region: content
   links:
-    weight: 100
     settings: {  }
     third_party_settings: {  }
+    weight: 101
     region: content
 hidden:
-  langcode: true
+  field_content: true
+  field_description: true
+  field_featured_image: true
+  field_tags: true
+  layout_builder__layout: true

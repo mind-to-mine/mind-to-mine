@@ -1,0 +1,26 @@
+uuid: 88b8e572-e600-4314-8cab-9c15331d48ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - ai_automators.automator_chain_type.summarize_text
+    - field.storage.automator_chain.field_output_field
+    - filter.format.content_with_ai
+  module:
+    - text
+_core:
+  default_config_hash: rBi_pxo6uf9Ak5hJDnBeRjUVaEUaVamRr0yU9ocTvLI
+id: automator_chain.summarize_text.field_output_field
+field_name: field_output_field
+entity_type: automator_chain
+bundle: summarize_text
+label: 'Output Field'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - content_with_ai
+field_type: text_long

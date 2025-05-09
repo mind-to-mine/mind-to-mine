@@ -1,4 +1,4 @@
-uuid: 48343540-7207-454a-ac76-dd18a4fa45da
+uuid: fc793bcb-5f3f-461e-b1df-bd159f18a57d
 langcode: en
 status: true
 dependencies:
@@ -6,5 +6,6 @@ dependencies:
     - path_alias
 id: path_alias.token
 label: Token
+description: null
 targetEntityType: path_alias
 cache: true

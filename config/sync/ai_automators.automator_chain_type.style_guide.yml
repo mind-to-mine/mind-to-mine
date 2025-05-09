@@ -1,0 +1,8 @@
+uuid: f76061b6-aa15-4e7b-b98b-cc589f2cdab1
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: ae1euFBsuMZa8-NJq0HMnZr2EAVysehlggfKjR5ucuQ
+id: style_guide
+label: 'Style Guide'

@@ -1,0 +1,21 @@
+uuid: bca82856-b9cb-4b09-bdbe-2f7d530af498
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai_automators
+    - text
+_core:
+  default_config_hash: 5DfA9bjpPJRXVthwjZNvHqFiaH4fAlSEjp17dsjGpcc
+id: automator_chain.field_output_field
+field_name: field_output_field
+entity_type: automator_chain
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

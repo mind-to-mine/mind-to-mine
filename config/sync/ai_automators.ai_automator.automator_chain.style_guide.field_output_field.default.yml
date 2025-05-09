@@ -1,0 +1,35 @@
+uuid: b1ed5d1f-599d-4dc4-8972-8c204b9eb061
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.automator_chain.style_guide.field_output_field
+_core:
+  default_config_hash: gUsVYqZ5XUyugBMAWM3qZ6bVLo9trmKoIo4lcS4WOjE
+id: automator_chain.style_guide.field_output_field.default
+label: 'Output Field Default'
+rule: llm_simple_text_long
+input_mode: base
+weight: 100
+worker_type: direct
+entity_type: automator_chain
+bundle: style_guide
+field_name: field_output_field
+edit_mode: false
+base_field: field_input_text
+prompt: "You are an advanced writing assistant specializing in formal business communication. Your task is to analyze the given text and rewrite it in a highly professional, polished, and precise manner. Adhere to the following style guide:\r\n\r\nTone & Style\r\nHighly formal and diplomatic\r\nObjective and neutral, avoiding personal opinions\r\nClear, concise, and authoritative\r\nStructure & Formatting\r\nUse complete sentences with proper grammar and punctuation\r\nMaintain a logical flow with structured paragraphs\r\nAvoid contractions (e.g., use \"do not\" instead of \"don’t\")\r\nWord Choice & Clarity\r\nUse precise and sophisticated vocabulary (e.g., \"facilitate\" instead of \"help\")\r\nAvoid casual phrases or colloquialisms\r\nFavor passive voice where appropriate for formality\r\nExamples\r\nCasual: \"We’re looking into the issue and will get back to you soon.\"\r\n\r\nFormal: \"The matter is currently under review, and a response will be provided in due course.\"\r\n\r\nCasual: \"Thanks for reaching out!\"\r\n\r\nFormal: \"We appreciate your inquiry and will respond accordingly.\"\r\n\r\nEnsure that the final text reflects professionalism, clarity, and respect while maintaining accuracy and precision.\r\n\r\nThe following is the context that I want you to rewrite. You may answer in html and use a, em, strong, ul, li, ol, p. Please keep the HTML similar to the original text.\r\n\r\nContext to rewrite:\r\n{{ raw_context }}"
+token: ''
+plugin_config:
+  automator_enabled: 1
+  automator_rule: llm_simple_text_long
+  automator_mode: base
+  automator_base_field: field_input_text
+  automator_prompt: "You are an advanced writing assistant specializing in formal business communication. Your task is to analyze the given text and rewrite it in a highly professional, polished, and precise manner. Adhere to the following style guide:\r\n\r\nTone & Style\r\nHighly formal and diplomatic\r\nObjective and neutral, avoiding personal opinions\r\nClear, concise, and authoritative\r\nStructure & Formatting\r\nUse complete sentences with proper grammar and punctuation\r\nMaintain a logical flow with structured paragraphs\r\nAvoid contractions (e.g., use \"do not\" instead of \"don’t\")\r\nWord Choice & Clarity\r\nUse precise and sophisticated vocabulary (e.g., \"facilitate\" instead of \"help\")\r\nAvoid casual phrases or colloquialisms\r\nFavor passive voice where appropriate for formality\r\nExamples\r\nCasual: \"We’re looking into the issue and will get back to you soon.\"\r\n\r\nFormal: \"The matter is currently under review, and a response will be provided in due course.\"\r\n\r\nCasual: \"Thanks for reaching out!\"\r\n\r\nFormal: \"We appreciate your inquiry and will respond accordingly.\"\r\n\r\nEnsure that the final text reflects professionalism, clarity, and respect while maintaining accuracy and precision.\r\n\r\nThe following is the context that I want you to rewrite. You may answer in html and use a, em, strong, ul, li, ol, p. Please keep the HTML similar to the original text.\r\n\r\nContext to rewrite:\r\n{{ raw_context }}"
+  automator_token: ''
+  automator_edit_mode: 0
+  automator_label: 'Output Field Default'
+  automator_weight: '100'
+  automator_worker_type: direct
+  automator_ai_provider: default_json
+  automator_code_block_type: html
+  automator_use_text_format: content_with_ai

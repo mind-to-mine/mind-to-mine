@@ -1,0 +1,26 @@
+uuid: 34eca1c9-0f2b-4fa6-ae34-5e51012c2b40
+langcode: en
+status: true
+dependencies:
+  config:
+    - ai_automators.automator_chain_type.summarize_text
+    - field.storage.automator_chain.field_input_text
+    - filter.format.content_with_ai
+  module:
+    - text
+_core:
+  default_config_hash: pUO4AhSGggRqBlZLIwyj6Q_SgEgeKT4l9X5nAAuoYss
+id: automator_chain.summarize_text.field_input_text
+field_name: field_input_text
+entity_type: automator_chain
+bundle: summarize_text
+label: 'Input Text'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - content_with_ai
+field_type: text_long

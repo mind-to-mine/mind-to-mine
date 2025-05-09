@@ -1,4 +1,4 @@
-uuid: bfa35f78-a078-4e60-b155-86c76dbf8247
+uuid: ce95bc25-2a78-4938-a0a5-d08d1affb535
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
   theme:
     - olivero
 _core:
-  default_config_hash: ygYOxNV388KKajE2oZsiM9hejoed0gu5WeXcLR_zfzM
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
 id: olivero_powered
 theme: olivero
 region: footer_bottom
@@ -17,6 +17,6 @@ plugin: system_powered_by_block
 settings:
   id: system_powered_by_block
   label: 'Powered by Drupal'
-  provider: system
   label_display: '0'
+  provider: system
 visibility: {  }

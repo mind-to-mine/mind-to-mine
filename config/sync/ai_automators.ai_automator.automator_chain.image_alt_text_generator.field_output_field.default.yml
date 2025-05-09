@@ -1,0 +1,35 @@
+uuid: ae79ae5c-9754-422f-b799-0e37dccd7821
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.automator_chain.image_alt_text_generator.field_output_field
+_core:
+  default_config_hash: OXeeaEO9ID8ELOACo3qoB3AgzuiR0GLi1isjj_LtiQc
+id: automator_chain.image_alt_text_generator.field_output_field.default
+label: 'Output Field Default'
+rule: llm_simple_text_long
+input_mode: token
+weight: 100
+worker_type: direct
+entity_type: automator_chain
+bundle: image_alt_text_generator
+field_name: field_output_field
+edit_mode: false
+base_field: field_image_alt_text
+prompt: ''
+token: "Can you return the following html based on the data provided:\r\n\r\n```html\r\n<img src=\"{image_url}\" data-entity-uuid=\"{image_uuid}\" data-entity-type=\"file\" alt=\"{alt_text}\">\r\n```\r\n\r\nThe data is:\r\nimage_url=[automator_chain:field_input_image:entity:url]\r\nimage_uuid=[automator_chain:field_input_image:entity:uuid]\r\nalt_text=[automator_chain:field_image_alt_text]"
+plugin_config:
+  automator_enabled: 1
+  automator_rule: llm_simple_text_long
+  automator_mode: token
+  automator_base_field: field_image_alt_text
+  automator_prompt: ''
+  automator_token: "Can you return the following html based on the data provided:\r\n\r\n```html\r\n<img src=\"{image_url}\" data-entity-uuid=\"{image_uuid}\" data-entity-type=\"file\" alt=\"{alt_text}\">\r\n```\r\n\r\nThe data is:\r\nimage_url=[automator_chain:field_input_image:entity:url]\r\nimage_uuid=[automator_chain:field_input_image:entity:uuid]\r\nalt_text=[automator_chain:field_image_alt_text]"
+  automator_edit_mode: 0
+  automator_label: 'Output Field Default'
+  automator_weight: '100'
+  automator_worker_type: direct
+  automator_ai_provider: default_json
+  automator_code_block_type: html
+  automator_use_text_format: content_with_ai

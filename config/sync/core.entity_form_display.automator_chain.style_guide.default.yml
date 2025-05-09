@@ -1,0 +1,35 @@
+uuid: 3edc87bf-a7b3-4cbe-9849-5b81dbc5a01d
+langcode: en
+status: true
+dependencies:
+  config:
+    - ai_automators.automator_chain_type.style_guide
+    - field.field.automator_chain.style_guide.field_input_text
+    - field.field.automator_chain.style_guide.field_output_field
+  module:
+    - text
+_core:
+  default_config_hash: R-VYlbcibto82MmiqUF9SXUIlcXIkONbJmWQuD4iRYQ
+id: automator_chain.style_guide.default
+targetEntityType: automator_chain
+bundle: style_guide
+mode: default
+content:
+  field_input_text:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_output_field:
+    type: text_textarea
+    weight: 1
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  ai_automator_status: true

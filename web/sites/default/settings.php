@@ -147,11 +147,6 @@ if ($env = getenv('LAGOON_ENVIRONMENT_TYPE')) {
   if (file_exists(__DIR__ . '/' . $env . '.services.yml')) {
     $settings['container_yamls'][] = __DIR__ . '/' . $env . '.services.yml';
   }
-} else if (($env = getenv('SB_ENVIRONMENT')) && isset($site_path) && isset($app_root)) {
-  $env_settings = $app_root . '/' . $site_path . '/silverback.' . $env . '.settings.php';
-  if (file_exists($env_settings)) {
-    include $env_settings;
-  }
 }
 
 // Last: this servers specific settings files.

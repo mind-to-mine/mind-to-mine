@@ -1,0 +1,6 @@
+_core:
+  default_config_hash: Y4lQbskWdv0b7yRJ5w92WJZThXvn_V_0GRFR5cuvXjo
+api_key: amazeeio_ai
+host: ''
+moderation: false
+amazee_host: 'https://backend.main.amazeeai.us2.amazee.io'

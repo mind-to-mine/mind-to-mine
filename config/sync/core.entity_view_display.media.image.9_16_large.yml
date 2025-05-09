@@ -1,0 +1,21 @@
+uuid: a40308a3-c989-4b41-8622-cfa7b4d410fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.9_16_large
+    - field.field.media.image.field_media_image
+    - media.type.image
+_core:
+  default_config_hash: yul_zb8OA6uDsuAs5SK94GpFMEebEBCCqKcJHAWS8XM
+id: media.image.9_16_large
+targetEntityType: media
+bundle: image
+mode: 9_16_large
+content: {  }
+hidden:
+  created: true
+  field_media_image: true
+  name: true
+  thumbnail: true
+  uid: true

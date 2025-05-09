@@ -1,0 +1,10 @@
+uuid: 065aa2cc-9b4b-4583-8f77-4e312f9585f7
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 36TMayUrf-JS0Ig-K-vkfvgICQDYNxu0zwkVoDNTjmg
+name: 'Content With AI'
+format: content_with_ai
+weight: 0
+filters: {  }

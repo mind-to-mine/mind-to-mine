@@ -1,0 +1,35 @@
+uuid: aed42977-437c-4af1-a4ea-1932325e4706
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai_automators
+    - options
+_core:
+  default_config_hash: EL_ohrg_MJN67WVBKsBv3-a1uo47hqijeu3u9ScLUV0
+id: automator_chain.ai_automator_status
+field_name: ai_automator_status
+entity_type: automator_chain
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: pending
+      label: Pending
+    -
+      value: processing
+      label: Processing
+    -
+      value: failed
+      label: Failed
+    -
+      value: finished
+      label: Finished
+  allowed_values_function: ''
+module: options
+locked: true
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

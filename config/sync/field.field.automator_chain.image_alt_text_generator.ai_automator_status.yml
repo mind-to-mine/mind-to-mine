@@ -1,0 +1,24 @@
+uuid: 6259cccb-30fd-432f-976d-2a51a1163ac1
+langcode: en
+status: true
+dependencies:
+  config:
+    - ai_automators.automator_chain_type.image_alt_text_generator
+    - field.storage.automator_chain.ai_automator_status
+  module:
+    - options
+_core:
+  default_config_hash: p45FiHxew6ysDOWMW-1bv3tmaOv_uVJy0DvwwNAYUGU
+id: automator_chain.image_alt_text_generator.ai_automator_status
+field_name: ai_automator_status
+entity_type: automator_chain
+bundle: image_alt_text_generator
+label: 'AI Automator Status'
+description: ''
+required: true
+translatable: true
+default_value:
+  - pending
+default_value_callback: ''
+settings: {  }
+field_type: list_string

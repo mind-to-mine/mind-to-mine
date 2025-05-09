@@ -1,0 +1,8 @@
+uuid: f48690f5-2ea6-4e37-a5a7-037843837180
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: U0R66sSIOgDQqWV19ODVcQ3cQyMz7S8uMk1OvgFtNXY
+id: image_alt_text_generator
+label: 'Image Alt Text Generator'

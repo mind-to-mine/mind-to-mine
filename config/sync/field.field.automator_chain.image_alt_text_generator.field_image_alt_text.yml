@@ -1,0 +1,21 @@
+uuid: 057cb1ef-992c-4450-bb85-e9c8d5b30a65
+langcode: en
+status: true
+dependencies:
+  config:
+    - ai_automators.automator_chain_type.image_alt_text_generator
+    - field.storage.automator_chain.field_image_alt_text
+_core:
+  default_config_hash: 12SlL_m60xU6k4QpxkHjVAj8Jkxzi8UsXVSlr7EdF-k
+id: automator_chain.image_alt_text_generator.field_image_alt_text
+field_name: field_image_alt_text
+entity_type: automator_chain
+bundle: image_alt_text_generator
+label: 'Image Alt Text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

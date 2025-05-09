@@ -1,0 +1,21 @@
+uuid: 771991c8-9396-4c56-8fd8-fbd8848ea4aa
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai_automators
+    - text
+_core:
+  default_config_hash: 8qe2nS9vxd3ZXptqbhmjWMB2gR6pRLEIAcxpqsew3lE
+id: automator_chain.field_input_text
+field_name: field_input_text
+entity_type: automator_chain
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

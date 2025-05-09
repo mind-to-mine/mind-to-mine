@@ -1,0 +1,8 @@
+uuid: 766f5cb3-405e-42f4-af37-1527302c7b27
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: mQGxrYi1bDpRdbWstTjJP8nVJecx_n5zwXqKz2CYVzY
+id: summarize_text
+label: 'Summarize Text'

@@ -1,0 +1,17 @@
+uuid: cedfa59f-1df1-4237-8422-71c20dabf25b
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: xYwCZF7BpW1eoYu_qsKgD-XgRjYoz7YtepP95cXmg-4
+name: alt_text_ckeditor_image
+label: 'Alt Text CkEditor Image'
+effects:
+  f071c451-60b2-42b9-a1f1-408af6d49e3d:
+    uuid: f071c451-60b2-42b9-a1f1-408af6d49e3d
+    id: image_scale
+    weight: 1
+    data:
+      width: 400
+      height: null
+      upscale: true

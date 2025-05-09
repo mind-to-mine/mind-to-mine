@@ -1,0 +1,51 @@
+uuid: bbcc7e3b-f4d5-4f3a-84c2-f7cdac3e880d
+langcode: en
+status: true
+dependencies:
+  config:
+    - ai_automators.automator_chain_type.image_alt_text_generator
+    - field.field.automator_chain.image_alt_text_generator.ai_automator_status
+    - field.field.automator_chain.image_alt_text_generator.field_image_alt_text
+    - field.field.automator_chain.image_alt_text_generator.field_input_image
+    - field.field.automator_chain.image_alt_text_generator.field_output_field
+  module:
+    - svg_image
+    - text
+_core:
+  default_config_hash: g7pqCjvWTAtmW6TJiCtams3SVElDRNyAxpXiPLDKwto
+id: automator_chain.image_alt_text_generator.default
+targetEntityType: automator_chain
+bundle: image_alt_text_generator
+mode: default
+content:
+  field_image_alt_text:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_input_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_output_field:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  ai_automator_status: true

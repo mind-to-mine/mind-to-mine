@@ -1,0 +1,40 @@
+uuid: 353b56e5-5374-421c-b8ba-2b7d2a125055
+langcode: en
+status: true
+dependencies:
+  config:
+    - ai_automators.automator_chain_type.image_alt_text_generator
+    - field.storage.automator_chain.field_input_image
+  module:
+    - image
+_core:
+  default_config_hash: 8rBikxu62DWKm8C30qC0zEhu2dBBo6jKU4mrT-CgXok
+id: automator_chain.image_alt_text_generator.field_input_image
+field_name: field_input_image
+entity_type: automator_chain
+bundle: image_alt_text_generator
+label: 'Input Image'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg webp'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: false
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+field_type: image

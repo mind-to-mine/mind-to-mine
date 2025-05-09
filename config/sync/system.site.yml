@@ -1,15 +1,15 @@
-uuid: 42896521-a742-4c6c-bf82-9135d5bfbedf
+_core:
+  default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
+langcode: en
+uuid: 14da4942-3256-44e7-aa05-f03549b11864
 name: 'Mind to Mine'
 mail: admin@example.com
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node/2
+  front: /node
 admin_compact_mode: false
 weight_select_max: 100
-langcode: en
 default_langcode: en
-_core:
-  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
-mail_notification: ''
+mail_notification: null

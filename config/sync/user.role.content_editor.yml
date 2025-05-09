@@ -1,0 +1,66 @@
+uuid: d63e5545-2dca-4975-8ca7-84a300e2edf9
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.content_format
+    - filter.format.content_with_ai
+    - node.type.article
+    - node.type.page
+    - taxonomy.vocabulary.tags
+    - workflows.workflow.basic_editorial
+  module:
+    - comment
+    - content_moderation
+    - contextual
+    - file
+    - filter
+    - node
+    - path
+    - scheduler
+    - system
+    - taxonomy
+    - toolbar
+    - trash
+_core:
+  default_config_hash: e_wG1u7SrGaJbY2-Szgbgl-c8T3kdirU3uTNq2c_QJQ
+id: content_editor
+label: 'Content editor'
+weight: 2
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access toolbar'
+  - 'access trash'
+  - 'administer menu'
+  - 'administer url aliases'
+  - 'create article content'
+  - 'create page content'
+  - 'create terms in tags'
+  - 'create url aliases'
+  - 'delete any page content'
+  - 'delete article revisions'
+  - 'delete own article content'
+  - 'delete own files'
+  - 'delete own page content'
+  - 'delete page revisions'
+  - 'edit any page content'
+  - 'edit own article content'
+  - 'edit own comments'
+  - 'edit own page content'
+  - 'edit terms in tags'
+  - 'revert all revisions'
+  - 'schedule publishing of nodes'
+  - 'use basic_editorial transition create_new_draft'
+  - 'use basic_editorial transition publish'
+  - 'use basic_editorial transition unpublish'
+  - 'use text format content_format'
+  - 'use text format content_with_ai'
+  - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view own unpublished content'
+  - 'view scheduled content'
+  - 'view the administration theme'

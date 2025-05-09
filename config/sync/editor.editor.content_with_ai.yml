@@ -1,0 +1,128 @@
+uuid: 10946bd3-f64d-44d3-a638-2eba9d6f71f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.content_with_ai
+  module:
+    - ckeditor5
+_core:
+  default_config_hash: EuWIDd7J18_b26J4US3hBHlB8z68teatbq_bfR8VI2U
+format: content_with_ai
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - heading
+      - bold
+      - italic
+      - blockQuote
+      - link
+      - bulletedList
+      - numberedList
+      - indent
+      - outdent
+      - alignment
+      - insertTable
+      - drupalInsertImage
+      - undo
+      - redo
+      - removeFormat
+      - sourceEditing
+      - aickeditor
+  plugins:
+    ai_ckeditor_ai:
+      dialog:
+        autoresize: 'min-width: 600px'
+        height: '750'
+        width: '900'
+        dialog_class: ai-ckeditor-modal
+      plugins:
+        ai_automators_ckeditor:
+          workflows:
+            image_alt_text_generator:
+              enabled: 1
+              inputs:
+                field_input_image: field_input_image
+              output: field_output_field
+              selected_input: field_input_image
+              require_selection: 1
+              write_mode: replace
+            style_guide:
+              enabled: 1
+              inputs:
+                field_input_text: field_input_text
+              output: field_output_field
+              selected_input: field_input_text
+              require_selection: 0
+              write_mode: replace
+            summarize_text:
+              enabled: 1
+              inputs:
+                field_input_text: field_input_text
+              output: field_output_field
+              selected_input: field_input_text
+              require_selection: 0
+              write_mode: replace
+          enabled: true
+        ai_ckeditor_completion:
+          provider: openai__gpt-4o
+          enabled: true
+        ai_ckeditor_help:
+          enabled: false
+        ai_ckeditor_reformat_html:
+          provider: openai__gpt-4o
+          enabled: false
+        ai_ckeditor_spellfix:
+          provider: openai__gpt-4o
+          enabled: true
+        ai_ckeditor_summarize:
+          provider: openai__gpt-4o
+          enabled: false
+        ai_ckeditor_tone:
+          autocreate: false
+          provider: openai__gpt-4o
+          tone_vocabulary: tags
+          use_description: 0
+          enabled: false
+        ai_ckeditor_translate:
+          autocreate: false
+          provider: openai__gpt-4o
+          translate_vocabulary: tags
+          use_description: false
+          enabled: false
+    ckeditor5_alignment:
+      enabled_alignments:
+        - center
+        - justify
+        - left
+        - right
+    ckeditor5_heading:
+      enabled_headings:
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+        - heading6
+    ckeditor5_imageResize:
+      allow_resize: true
+    ckeditor5_list:
+      properties:
+        reversed: true
+        startIndex: true
+      multiBlock: true
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+    linkit_extension:
+      linkit_enabled: true
+      linkit_profile: default
+    media_media:
+      allow_view_mode_override: false
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: null
+  max_dimensions:
+    width: null
+    height: null

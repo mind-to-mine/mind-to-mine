@@ -1,0 +1,26 @@
+uuid: df6ad8cf-c043-4e45-8693-712fc0b638b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - ai_automators.automator_chain_type.image_alt_text_generator
+    - field.storage.automator_chain.field_output_field
+    - filter.format.content_with_ai
+  module:
+    - text
+_core:
+  default_config_hash: '-samijdn05x5xsWudO-u_yra5zzdAuLXN3EYFDV79jA'
+id: automator_chain.image_alt_text_generator.field_output_field
+field_name: field_output_field
+entity_type: automator_chain
+bundle: image_alt_text_generator
+label: 'Output Field'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - content_with_ai
+field_type: text_long

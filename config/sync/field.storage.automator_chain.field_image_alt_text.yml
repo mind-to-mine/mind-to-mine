@@ -1,0 +1,21 @@
+uuid: faa2434e-68d7-433b-8900-dd6d366a86e9
+langcode: en
+status: true
+dependencies:
+  module:
+    - ai_automators
+_core:
+  default_config_hash: jq2JDp__o9sY3YtjInsb9oAMoAjgDvV6jezc0hYpY4k
+id: automator_chain.field_image_alt_text
+field_name: field_image_alt_text
+entity_type: automator_chain
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

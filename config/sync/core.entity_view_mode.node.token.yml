@@ -1,4 +1,4 @@
-uuid: 36d909c9-73c8-4bca-810b-5a61a06f7dac
+uuid: 7cd8aaf0-7648-4f75-8f36-7407d92999ad
 langcode: en
 status: true
 dependencies:
@@ -6,5 +6,6 @@ dependencies:
     - node
 id: node.token
 label: Token
+description: null
 targetEntityType: node
 cache: true
