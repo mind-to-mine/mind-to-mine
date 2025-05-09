@@ -24,8 +24,12 @@
         "drupal/core-dev-pinned": "11.1.7",
         "drupal/core-project-message": "11.1.7",
         "drupal/core-recommended": "11.1.7",
+        "drupal/gin": "^4.0",
+        "drupal/gin_toolbar": "^2.0",
         "drupal/lagoon_logs": "3.0.1",
+        "drupal/metatag": "^2.1",
         "drupal/mysql57": "1.0.0",
+        "drupal/token": "^1.15",
         "drush/drush": "13.6.0",
         "mglaman/composer-drupal-lenient": "1.0.7"
     },
