@@ -1,14 +1,14 @@
 _core:
-  default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
+  default_config_hash: HlN7eAN2N4JIHsYv56V4E7sqC9bS609KwvGFjyD_mgk
 langcode: en
-uuid: 14da4942-3256-44e7-aa05-f03549b11864
-name: 'Mind to Mine'
+uuid: aafd8d0e-9b89-49fb-b0fa-66da16e94f41
+name: 'Drush Site-Install'
 mail: admin@example.com
 slogan: ''
 page:
-  403: ''
+  403: /user/login
   404: ''
-  front: /node
+  front: /node/2
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en

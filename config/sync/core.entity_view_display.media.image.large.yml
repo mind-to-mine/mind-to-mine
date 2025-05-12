@@ -1,4 +1,4 @@
-uuid: 5795765f-87ce-4e5d-9655-1ff1828eba07
+uuid: 9fd81995-2cbf-4ef6-a614-96cb3fecc993
 langcode: en
 status: true
 dependencies:
@@ -6,16 +6,31 @@ dependencies:
     - core.entity_view_mode.media.large
     - field.field.media.image.field_media_image
     - media.type.image
+    - responsive_image.styles.uncropped_large
+  module:
+    - responsive_image
 _core:
   default_config_hash: XvmVZ_yi02p9yC65erQMoAF3IWDKwKjXeOuwDTrsws8
 id: media.image.large
 targetEntityType: media
 bundle: image
 mode: large
-content: {  }
+content:
+  field_media_image:
+    type: responsive_image
+    label: visually_hidden
+    settings:
+      responsive_image_style: uncropped_large
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   created: true
-  field_media_image: true
+  langcode: true
   name: true
+  search_api_excerpt: true
   thumbnail: true
   uid: true

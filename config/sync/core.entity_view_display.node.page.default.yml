@@ -1,9 +1,8 @@
-uuid: a1966b4d-ac52-43e2-adae-027b65a81905
+uuid: 75b43c00-0bb6-4fd4-a42c-5e47a684508e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.page.body
     - field.field.node.page.field_content
     - field.field.node.page.field_description
     - field.field.node.page.field_featured_image
@@ -25,11 +24,11 @@ third_party_settings:
         layout_settings:
           label: ''
         components:
-          e08c8011-3134-4e30-a426-914454dd62d0:
-            uuid: e08c8011-3134-4e30-a426-914454dd62d0
+          541922dc-a8c8-4b74-9cdd-88a1f5d053dd:
+            uuid: 541922dc-a8c8-4b74-9cdd-88a1f5d053dd
             region: content
             configuration:
-              id: 'field_block:node:page:body'
+              id: 'field_block:node:page:field_content'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
@@ -38,41 +37,89 @@ third_party_settings:
                 label: hidden
                 settings: {  }
                 third_party_settings: {  }
-            weight: 0
+            weight: 2
             additional: {  }
-          ea7f0573-5f6b-45a3-a101-06607c67e801:
-            uuid: ea7f0573-5f6b-45a3-a101-06607c67e801
+          b09072a1-7bd8-49c5-ac58-2da953562e12:
+            uuid: b09072a1-7bd8-49c5-ac58-2da953562e12
             region: content
             configuration:
-              id: 'extra_field_block:node:page:links'
+              id: 'extra_field_block:node:page:content_moderation_control'
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
             weight: 1
             additional: {  }
+          bfcb27c2-a42f-4e71-bf84-1841a548d5a6:
+            uuid: bfcb27c2-a42f-4e71-bf84-1841a548d5a6
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_featured_image'
+              label: 'Featured image'
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: hero
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          6976105a-c13d-457c-a8ae-0dfd6f9a7903:
+            uuid: 6976105a-c13d-457c-a8ae-0dfd6f9a7903
+            region: content
+            configuration:
+              id: 'field_block:node:page:field_tags'
+              label: Tags
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: entity_reference_label
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
         third_party_settings: {  }
 _core:
-  default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
+  default_config_hash: rVDjFcG7a9eUsRsMS1vdA6OQgJ77pZjEPmk1fIuADao
 id: node.page.default
 targetEntityType: node
 bundle: page
 mode: default
 content:
-  body:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_content:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
-  links:
-    settings: {  }
+  field_featured_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: hero
+      link: false
     third_party_settings: {  }
-    weight: 101
+    weight: 1
     region: content
 hidden:
-  field_content: true
   field_description: true
-  field_featured_image: true
   field_tags: true
+  langcode: true
   layout_builder__layout: true
+  links: true
+  search_api_excerpt: true

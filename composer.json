@@ -25,8 +25,8 @@
         "drupal/amazeeio_ckeditor_widgets": "1.0.x-dev",
         "drupal/core-composer-scaffold": "11.1.7",
         "drupal/core-dev-pinned": "11.1.7",
-        "drupal/core-project-message": "11.1.7",
         "drupal/core-recommended": "11.1.7",
+        "drupal/drupal_cms_starter": "^1.0",
         "drupal/eca": "^2.1",
         "drupal/gin": "^4.0",
         "drupal/gin_toolbar": "^2.0",
@@ -44,12 +44,12 @@
     "prefer-stable": true,
     "config":{
         "sort-packages": true,
+        "optimize-autoloader": true,
         "allow-plugins": {
             "composer/installers": true,
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
-            "drupal/core-project-message": true,
             "mglaman/composer-drupal-lenient": true,
             "php-http/discovery": true,
             "phpstan/extension-installer": true,
@@ -65,6 +65,8 @@
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
             "web/modules/custom/{$name}": ["type:drupal-custom-module"],
+            "web/profiles/custom/{$name}": ["type:drupal-custom-profile"],
+            "recipes/{$name}": ["type:drupal-recipe"],
             "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
         },
         "drupal-scaffold": {

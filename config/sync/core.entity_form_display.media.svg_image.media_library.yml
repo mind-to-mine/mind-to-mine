@@ -1,4 +1,4 @@
-uuid: 71aedfa3-3a91-4274-aa0d-2307544d12af
+uuid: 2efb6c80-e54b-4cb9-ad04-b8ae2513ef67
 langcode: en
 status: true
 dependencies:
@@ -23,6 +23,13 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
     third_party_settings: {  }
   name:
     type: string_textfield

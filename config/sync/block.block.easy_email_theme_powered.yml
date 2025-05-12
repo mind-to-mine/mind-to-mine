@@ -1,0 +1,22 @@
+uuid: ba282afc-7280-4eaa-871a-b7599372ec03
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - easy_email_theme
+_core:
+  default_config_hash: 5VBXsyvJSTQNtrh86WK8GN_FCaRtK03D1fjfZQnUvtU
+id: easy_email_theme_powered
+theme: easy_email_theme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

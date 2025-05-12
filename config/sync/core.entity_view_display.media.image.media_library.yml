@@ -1,4 +1,4 @@
-uuid: ea25a806-0cf3-4c5c-9a46-cafb65a0037e
+uuid: 89f1693c-6d2d-4626-bebd-447e2bab531e
 langcode: en
 status: true
 dependencies:
@@ -29,10 +29,12 @@ content:
         height: null
       svg_render_as_image: true
     third_party_settings: {  }
-    weight: 1
+    weight: 4
     region: content
 hidden:
   created: true
   field_media_image: true
+  langcode: true
   name: true
+  search_api_excerpt: true
   uid: true

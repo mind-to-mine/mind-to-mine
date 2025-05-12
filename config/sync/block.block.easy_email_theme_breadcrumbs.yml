@@ -1,0 +1,22 @@
+uuid: 5f836ba4-7528-46aa-a05f-e5ed54089cf8
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - easy_email_theme
+_core:
+  default_config_hash: rUKMsaj4XvIHtU3kRiHIA6Rkn4IHzCkhTiUZudMkp14
+id: easy_email_theme_breadcrumbs
+theme: easy_email_theme
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

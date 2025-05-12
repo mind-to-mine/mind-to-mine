@@ -1,0 +1,27 @@
+uuid: 2aa57564-4b57-40e7-b731-b69a9dff213d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - easy_email_theme
+_core:
+  default_config_hash: IYx37JlV-JCEqldSOUCsYu6gh4RpwuLDPpoeQcEF7mk
+id: easy_email_theme_main_menu
+theme: easy_email_theme
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: true
+visibility: {  }

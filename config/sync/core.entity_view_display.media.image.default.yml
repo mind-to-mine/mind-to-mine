@@ -1,4 +1,4 @@
-uuid: 1fc4e921-5661-4c71-94ad-de8ba137732a
+uuid: faad927a-dc91-449f-80a1-e04a18058b52
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
     - image.style.large
     - media.type.image
   module:
-    - image
+    - svg_image
 _core:
   default_config_hash: t2YAVeSqMs3Gpnfp_plCnQ2TsoC0u57VCUWl8e2jMMM
 id: media.image.default
@@ -19,8 +19,8 @@ content:
     type: image
     label: visually_hidden
     settings:
-      image_style: large
       image_link: ''
+      image_style: large
       image_loading:
         attribute: lazy
     third_party_settings: {  }
@@ -28,6 +28,8 @@ content:
     region: content
 hidden:
   created: true
+  langcode: true
   name: true
+  search_api_excerpt: true
   thumbnail: true
   uid: true

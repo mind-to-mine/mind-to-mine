@@ -1,0 +1,22 @@
+uuid: 42438e0a-ea74-4d5e-afcd-e3ef1b3c37a9
+langcode: en
+status: true
+dependencies:
+  theme:
+    - easy_email_theme
+_core:
+  default_config_hash: 3KAyDgB3FHENrBwroAUcCPvkfPHBMFcRDnsZFyFMuwc
+id: easy_email_theme_secondary_local_tasks
+theme: easy_email_theme
+region: highlighted
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }
