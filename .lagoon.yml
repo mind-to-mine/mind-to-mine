@@ -9,8 +9,8 @@ tasks:
         command: env
         service: cli
     - run:
-        name: drush cr
-        command: drush -y cr
+        name: drush deploy
+        command: drush -y deploy
         service: cli
 
 environments:
