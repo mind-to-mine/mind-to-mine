@@ -32,7 +32,8 @@ schema.graphql
 /web/themes/contrib/
 /web/profiles/contrib/
 /web/libraries/
-console/
+/console/
+/recipes/
 
 # Ignore sensitive information
 /web/sites/*/settings.local.php
