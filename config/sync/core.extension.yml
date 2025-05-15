@@ -7,6 +7,8 @@ module:
   ai_provider_amazeeio: 0
   ai_provider_litellm: 0
   ai_provider_openai: 0
+  ai_search: 0
+  ai_vdb_provider_postgres: 0
   announcements_feed: 0
   automated_cron: 0
   automatic_updates: 0

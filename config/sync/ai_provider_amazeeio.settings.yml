@@ -3,4 +3,9 @@ _core:
 api_key: amazeeio_ai
 moderation: false
 host: 'https://litellm.amazeeai-de1.amazeeio.review'
+postgres_host: amazeeai-de1-vectordb1.cluster-c7ey0kuqezs4.eu-central-1.rds.amazonaws.com
+postgres_port: 5432
+postgres_default_database: db_aa01a7f2
+postgres_username: user_aa52e837
+postgres_password: amazeeio_ai_database
 amazee_host: 'https://backend.main.amazeeai.us2.amazee.io'
