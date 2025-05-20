@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "91aa17bd812efe45563b925eee39e51c",
+    "content-hash": "5dcf25a05af11d6750e8a8566eccb77c",
     "packages": [
         {
             "name": "amazeeio/drupal_integrations",
@@ -2239,7 +2239,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ai.git",
-                "reference": "83542b960c4493524fafd20bbcd4c486597bdb7f"
+                "reference": "14bd3777897395a90e87984f375c92dcd8348282"
             },
             "require": {
                 "drupal/core": "^10.2 || ^11",
@@ -2268,8 +2268,8 @@
                     "dev-1.1.x": "1.1.x-dev"
                 },
                 "drupal": {
-                    "version": "1.1.0-beta1+17-dev",
-                    "datestamp": "1747235032",
+                    "version": "1.1.0-beta1+30-dev",
+                    "datestamp": "1747684083",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
@@ -2318,16 +2318,18 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ai_provider_amazeeio.git",
-                "reference": "00d4d4c189c85abc02ce03868057d38322af908e"
+                "reference": "513eb37ff37bab52f4479acd5e69f76016a65469"
             },
             "require": {
-                "drupal/ai": "1.1.x-dev@dev",
+                "drupal/ai": "^1.1",
                 "drupal/ai_provider_litellm": "^1.0@beta",
                 "drupal/ai_search": "*",
-                "drupal/ai_vdb_provider_postgres": "1.0.x-dev",
+                "drupal/ai_vdb_provider_postgres": "^1.0@alpha",
                 "drupal/core": "^10.2 || ^11",
-                "drupal/key": "*",
-                "drupal/search_api": "^1.x-dev"
+                "drupal/key": "*"
+            },
+            "require-dev": {
+                "drupal/search_api": ">1.20"
             },
             "type": "drupal-module",
             "extra": {
@@ -2335,8 +2337,8 @@
                     "dev-1.0.x": "1.0.x-dev"
                 },
                 "drupal": {
-                    "version": "1.0.0-beta5+4-dev",
-                    "datestamp": "1747264379",
+                    "version": "1.0.0-rc1+1-dev",
+                    "datestamp": "1747669215",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -2390,6 +2392,39 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/ai_provider_amazeeio"
             }
+        },
+        {
+            "name": "drupal/ai_provider_amazeeio_recipe",
+            "version": "1.0.0-beta3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ai_provider_amazeeio_recipe.git",
+                "reference": "3a535e052c34241a8a339ebdae86b70b085a7df2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://git.drupalcode.org/api/v4/projects/project%2Fai_provider_amazeeio_recipe/repository/archive.zip?sha=3a535e052c34241a8a339ebdae86b70b085a7df2",
+                "reference": "3a535e052c34241a8a339ebdae86b70b085a7df2",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/ai": "1.1.x-dev",
+                "drupal/ai_provider_amazeeio": "^1.0.0-beta5@beta",
+                "drupal/core": ">=10.4"
+            },
+            "conflict": {
+                "drupal/project_browser": "<2-alpha7"
+            },
+            "type": "drupal-recipe",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Automates the setup of the Amazee.io AI provider.",
+            "support": {
+                "source": "https://git.drupalcode.org/project/ai_provider_amazeeio_recipe/-/tree/1.0.0-beta3"
+            },
+            "time": "2025-03-25T13:37:03+00:00"
         },
         {
             "name": "drupal/ai_provider_litellm",
@@ -2569,11 +2604,17 @@
         },
         {
             "name": "drupal/ai_vdb_provider_postgres",
-            "version": "dev-1.0.x",
+            "version": "1.0.0-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ai_vdb_provider_postgres.git",
-                "reference": "b37246b46ac8bb3d0118f05cea51a2d686017cfb"
+                "reference": "1.0.0-alpha1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ai_vdb_provider_postgres-1.0.0-alpha1.zip",
+                "reference": "1.0.0-alpha1",
+                "shasum": "455912bea0d306c9dd8df3d62aa37e2f5723a3f0"
             },
             "require": {
                 "drupal/ai": "^1.1@beta",
@@ -2583,12 +2624,9 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.0.x": "1.0.x-dev"
-                },
                 "drupal": {
-                    "version": "1.0.x-dev",
-                    "datestamp": "1747220381",
+                    "version": "1.0.0-alpha1",
+                    "datestamp": "1747220661",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -16428,6 +16466,7 @@
     "stability-flags": {
         "drupal/ai": 20,
         "drupal/ai_provider_amazeeio": 20,
+        "drupal/ai_provider_amazeeio_recipe": 10,
         "drupal/amazeeio_ckeditor_widgets": 20,
         "drupal/search_api": 20
     },
